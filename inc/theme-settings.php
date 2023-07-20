@@ -165,8 +165,9 @@ function sprivaten_theme_scripts_loader() {
 	// 2. Scripts.
     wp_enqueue_script( 'main-js', get_theme_file_uri( 'assets/dist/main.bundle.js' ), [], $theme_version, true );
 
-	// Localize Javascript variables
-    wp_localize_script( 'main-js', 'ajax', [ 'url' => admin_url( 'admin-ajax.php' ) ] );
+    // Localize Javascript variables
+    $ajax_nonce = wp_create_nonce('sprivaten_ajax_nonce');
+    wp_localize_script( 'main-js', 'ajax', [ 'url' => admin_url( 'admin-ajax.php' ), 'nonce' => $ajax_nonce ] );
 }
 add_action( 'wp_enqueue_scripts', 'sprivaten_theme_scripts_loader' );
 
@@ -183,3 +184,32 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 		'redirect'   => false
 	) );
 }
+
+
+function create_appointment_table() {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'appointment';
+
+    // Check if the table already exists
+    if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") !== $table_name) {
+
+        // Define the SQL query for creating the custom table
+        $sql = "CREATE TABLE $table_name (
+            id INT NOT NULL AUTO_INCREMENT,
+            name VARCHAR(255) NOT NULL,
+            email VARCHAR(255) NOT NULL,
+            department VARCHAR(255) NOT NULL,
+            time VARCHAR(255) NOT NULL,
+            message VARCHAR(500) NOT NULL,
+            created_at DATETIME NOT NULL,
+            PRIMARY KEY (id)
+        )";
+
+        // Include the upgrade.php file to use dbDelta function
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+
+        // Execute the SQL query
+        dbDelta($sql);
+    }
+}
+add_action('after_switch_theme', 'create_appointment_table', 20);

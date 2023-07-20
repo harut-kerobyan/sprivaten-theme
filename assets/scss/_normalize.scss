@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
 *,
 *::before,
 *::after {
@@ -8,10 +10,6 @@
   :root {
     scroll-behavior: smooth;
   }
-}
-
-body {
-  margin: 0;
 }
 
 .visually-hidden-focusable:not(:focus):not(:focus-within) {

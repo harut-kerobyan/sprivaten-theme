@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+.container {
+  max-width: calc(1050px + 84px);
+  margin: 0 auto;
+  padding: 0 42px;
+}
+
+.btn {
+  padding: 10px 36px;
+  color: $text-light;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.btn-primary {
+    background-color: $primary;
+    border-radius: 5px;
+    padding: 15px 40px;
+  }
+
+  &.btn-secondary {
+    background-color: $secondary;
+    border-radius: 37px;
+  }
+
+  &.btn-ghost {
+    background-color: transparent;
+    border-radius: 37px;
+    border: 1px solid $secondary;
+    color: $secondary;
+  }
+
+  &:disabled {
+    background-color: $text-muted;
+    cursor: not-allowed;
+  }
+
+  &.loading {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 5;
+      top: 30%;
+      right: 20px;
+      width: 24px;
+      height: 24px;
+      border: 4px solid $text-light;
+      border-bottom-color: $primary;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+      background-color: transparent;
+    }
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+label {
+  display: block;
+
+  span {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: $text;
+    font-weight: 600;
+    line-height: 1.7;
+    cursor: pointer;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  border-radius: 5px;
+  border: 1px solid $text-muted;
+  background: #F9F9F9;
+  padding: 10px 20px;
+  color: $text-second;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  width: 100%;
+  line-height: 2;
+  margin-bottom: 7px;
+  height: 50px;
+}
+
+.error-msg {
+  color: $text-error;
+}
+
+.success-msg {
+  color: $text-success;
+}
+
+.form-msg {
+  text-align: center;
+  margin-top: 16px;
+}

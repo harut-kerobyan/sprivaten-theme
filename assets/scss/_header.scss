@@ -1,3 +1,35 @@
 #header {
-  background: green;
+  height: 104px;
+  padding: 23px 59px;
+  position: absolute;
+  width: 100%;
+
+  .sprivaten-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .sprivaten-menu-nav {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      grid-gap: 21px;
+
+      a {
+        color: $text-second;
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.7;
+        letter-spacing: 0.2px;
+        text-decoration: none;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
 }
