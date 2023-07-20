@@ -1,0 +1,31 @@
+.section-team {
+  padding: 80px 0;
+
+  .team-cards {
+    margin-top: 80px;
+
+    .team-card {
+      border: 1px solid #eee;
+
+      .team-card-body {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 5px;
+        padding: 30px;
+        text-align: center;
+
+        h6 {
+          color: $text-second;
+          line-height: 1.7;
+        }
+
+        .team-card-socials {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          grid-gap: 15px;
+        }
+      }
+    }
+  }
+}

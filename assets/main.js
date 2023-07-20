@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import Swiper from 'swiper';
 
 const validateEmail = (email) => {
     return email.match(
@@ -29,6 +30,7 @@ $(document).ready(function () {
         const emailValue = $(emailField).val().trim();
         const departmentValue = $(departmentField).val().trim();
         const timeValue = $(timeField).val().trim();
+        const messageValue = $(currentForm).find('textarea[name=message]').val();
 
         if (!nameValue) {
             errors.push({
@@ -70,6 +72,7 @@ $(document).ready(function () {
                     email: emailValue,
                     department: departmentValue,
                     time: timeValue,
+                    message: messageValue,
                 },
                 beforeSend: function (xhr) {
                     $(button).prop('disabled', true);
@@ -93,6 +96,32 @@ $(document).ready(function () {
                 $(err.selector).closest('.form-item-wrap').addClass('no-valid');
                 $(err.selector).closest('.form-item-wrap').append(`<span class="error-msg">${err.msg}</span>`);
             });
+        }
+    });
+
+    const swiper = new Swiper(".swiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        grabCursor: true,
+        enabled: true,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            },
+            525: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            }
         }
     });
 });

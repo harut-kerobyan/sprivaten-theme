@@ -1,0 +1,46 @@
+.section-video {
+  padding: 80px 0;
+  background-color: #FAFAFA;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #16697A;
+    z-index: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.50);
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 5;
+  }
+
+  .video-wrap {
+    aspect-ratio: 8/4;
+    margin: 50px 86px 0;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    video {
+      width: 100%;
+    }
+  }
+}

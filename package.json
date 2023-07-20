@@ -16,7 +16,8 @@
     "last 2 versions"
   ],
   "dependencies": {
-    "jquery": "^3.7.0"
+    "jquery": "^3.7.0",
+    "swiper": "^10.0.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",

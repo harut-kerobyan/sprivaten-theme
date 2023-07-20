@@ -5,6 +5,18 @@ body {
   letter-spacing: 0.2px;
 }
 
+p {
+  color: $text-second;
+  font-weight: 500;
+  line-height: 1.42;
+}
+
+small {
+  font-size: 12px;
+  color: $text-muted;
+  line-height: 2.3;
+}
+
 .container {
   max-width: calc(1050px + 84px);
   margin: 0 auto;
@@ -98,7 +110,8 @@ label {
 
 input[type="text"],
 input[type="email"],
-select {
+select,
+textarea {
   border-radius: 5px;
   border: 1px solid $text-muted;
   background: #F9F9F9;
@@ -113,6 +126,10 @@ select {
   height: 50px;
 }
 
+textarea {
+  height: 140px;
+}
+
 .error-msg {
   color: $text-error;
 }
@@ -124,4 +141,23 @@ select {
 .form-msg {
   text-align: center;
   margin-top: 16px;
+}
+
+.section-title {
+  text-align: center;
+  max-width: 470px;
+  margin: 0 auto;
+}
+
+.section-desc {
+  text-align: center;
+  margin: 10px auto 0;
+  max-width: 470px;
+}
+
+.link {
+  color: $primary;
+  font-weight: 600;
+  line-height: 1.7;
+  text-decoration: none;
 }

@@ -93,8 +93,8 @@ function sprivaten_theme_widgets_init() {
 			'id'            => 'widget_area_1',
 			'before_widget' => '',
 			'after_widget'  => '',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
+			'before_title'  => '<h5 class="widget-title">',
+			'after_title'   => '</h5>',
 		)
 	);
 
@@ -104,8 +104,8 @@ function sprivaten_theme_widgets_init() {
             'id'            => 'widget_area_2',
             'before_widget' => '',
             'after_widget'  => '',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
+            'before_title'  => '<h5 class="widget-title">',
+            'after_title'   => '</h5>',
         )
     );
 
@@ -115,8 +115,8 @@ function sprivaten_theme_widgets_init() {
             'id'            => 'widget_area_3',
             'before_widget' => '',
             'after_widget'  => '',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
+            'before_title'  => '<h5 class="widget-title">',
+            'after_title'   => '</h5>',
         )
     );
 
@@ -126,8 +126,8 @@ function sprivaten_theme_widgets_init() {
             'id'            => 'widget_area_4',
             'before_widget' => '',
             'after_widget'  => '',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
+            'before_title'  => '<h5 class="widget-title">',
+            'after_title'   => '</h5>',
         )
     );
 }
@@ -185,7 +185,10 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 	) );
 }
 
-
+/**
+ * Create "appointment" table when theme is activated
+ * @return void
+ */
 function create_appointment_table() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'appointment';

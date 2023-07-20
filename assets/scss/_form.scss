@@ -1,0 +1,26 @@
+.form-wrap {
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  max-width: 328px;
+  width: 100%;
+
+  h3 {
+    margin-bottom: 40px;
+  }
+
+  .form-item-wrap {
+    margin-bottom: 5px;
+
+    &.no-valid {
+      .form-item-field {
+        border-color: $text-error;
+      }
+    }
+  }
+
+  .btn {
+    margin-top: 40px;
+    width: 100%;
+  }
+}

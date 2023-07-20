@@ -1,0 +1,14 @@
+.section-cta {
+  padding: 40px 0;
+  background-color: #FAFAFA;
+
+  .cta-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      margin: 10px 0 0;
+    }
+  }
+}

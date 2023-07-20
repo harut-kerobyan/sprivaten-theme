@@ -15,7 +15,7 @@
     <header id="header">
         <nav class="sprivaten-nav">
             <div class="sprivaten-brand">
-                <a class="logo-wrap" href="<?php echo esc_url(home_url()); ?>"
+                <a href="<?php echo esc_url(home_url()); ?>"
                    title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
                     <?php if (!empty(get_field('logo', 'option'))) : ?>
                         <img <?php awesome_acf_responsive_image(get_field('logo', 'option')['ID'], 'full', '187px'); ?>
