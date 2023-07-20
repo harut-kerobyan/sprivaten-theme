@@ -14,7 +14,7 @@ $testimonials = get_sub_field('testimonials');
                 <div class="testimonials-cards swiper-wrapper">
                     <?php foreach ($testimonials as $item) : ?>
                         <div class="testimonial-card swiper-slide">
-                            <div><?php echo $item['stars']; ?></div>
+                            <?php rate_stars_html($item['stars']); ?>
                             <div><?php echo $item['text']; ?></div>
                             <div class="testimonial-card-footer">
                                 <div class="testimonial-card-icon-wrap">
