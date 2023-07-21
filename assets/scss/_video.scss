@@ -44,3 +44,14 @@
     }
   }
 }
+
+@media (max-width: $mobile) {
+  .section-video {
+    padding: 80px 0 60px;
+
+    .video-wrap {
+      aspect-ratio: 30/44;
+      margin: 60px 12px 0;
+    }
+  }
+}

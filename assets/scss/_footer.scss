@@ -6,6 +6,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    grid-gap: 50px;
 
     .footer-socials {
       display: flex;
@@ -76,5 +78,39 @@
     padding: 25px;
     color: #fff;
     background-color: #16697A;
+  }
+}
+
+@media (max-width: $tablet) {
+  #footer {
+    .footer-brand {
+      .footer-socials {
+        display: flex;
+        grid-gap: 20px;
+
+        a {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
+    .footer-widgets {
+      display: flex;
+      flex-wrap: wrap;
+      border: none;
+    }
+
+    .copyright-block {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  #footer {
+    .footer-widgets {
+      flex-direction: column;
+    }
   }
 }

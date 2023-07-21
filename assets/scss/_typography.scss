@@ -35,3 +35,9 @@ h6, .h6 {
   @extend %heading;
   font-size: 14px;
 }
+
+@media (max-width: $tablet) {
+  h1, .h1 {
+    font-size: 40px;
+  }
+}

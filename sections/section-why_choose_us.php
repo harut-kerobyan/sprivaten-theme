@@ -14,8 +14,10 @@ $feature_items = get_sub_field('feature_items');
                 <?php foreach ($feature_items as $item) : ?>
                     <div class="why-us-card">
                         <div class="why-us-card-head">
-                            <div class="why-us-card-icon-wrap">
-                                <img src="<?php echo $item['icon']; ?>" alt="<?php echo $item['title']; ?>"/>
+                            <div>
+                                <div class="why-us-card-icon-wrap">
+                                    <img src="<?php echo $item['icon']; ?>" alt="<?php echo $item['title']; ?>"/>
+                                </div>
                             </div>
                             <h5><?php echo $item['title']; ?></h5>
                         </div>

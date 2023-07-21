@@ -8,6 +8,12 @@ const validateEmail = (email) => {
 };
 
 $(document).ready(function () {
+    // Trigger mobile menu open/close
+    $('.menu-toggle-btn').click(function (){
+        $('.mobile-menu').toggleClass('opened');
+    });
+
+    // Handle appointment form submit
     $('.book-appointment-form').submit(function (e) {
         e.preventDefault();
 
@@ -99,6 +105,7 @@ $(document).ready(function () {
         }
     });
 
+    // Init Swiper slider
     const swiper = new Swiper(".swiper", {
         slidesPerView: 3,
         spaceBetween: 30,

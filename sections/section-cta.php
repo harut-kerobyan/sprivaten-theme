@@ -12,14 +12,12 @@ $button = get_sub_field('button');
                 <h3><?php echo $title; ?></h3>
                 <p><?php echo $description; ?></p>
             </div>
-            <div class="buttons-wrap">
-                <?php if ($button) : ?>
-                    <a href="<?php echo $button['url']; ?>" target="<?php echo $button['target']; ?>"
-                       class="btn btn-primary">
-                        <?php echo $button['title']; ?>
-                    </a>
-                <?php endif; ?>
-            </div>
+            <?php if ($button) : ?>
+                <a href="<?php echo $button['url']; ?>" target="<?php echo $button['target']; ?>"
+                   class="btn btn-primary">
+                    <?php echo $button['title']; ?>
+                </a>
+            <?php endif; ?>
         </div>
     </div>
 </section>

@@ -17,6 +17,10 @@ small {
   line-height: 2.3;
 }
 
+img {
+  max-width: 100%;
+}
+
 .container {
   max-width: calc(1050px + 84px);
   margin: 0 auto;

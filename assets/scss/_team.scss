@@ -7,6 +7,12 @@
     .team-card {
       border: 1px solid #eee;
 
+      .team-card-image-wrap {
+        img {
+          width: 100%;
+        }
+      }
+
       .team-card-body {
         display: flex;
         flex-direction: column;

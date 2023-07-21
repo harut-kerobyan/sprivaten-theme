@@ -30,3 +30,15 @@
     }
   }
 }
+
+@media (max-width: $mobile) {
+  .section-contact {
+    .form-wrap {
+      padding: 40px 0 0;
+
+      .grid-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

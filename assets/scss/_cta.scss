@@ -12,3 +12,17 @@
     }
   }
 }
+
+@media (max-width: $mobile) {
+  .section-cta {
+    .cta-wrap {
+      flex-direction: column;
+      grid-gap: 50px;
+      padding: 0 30px;
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}
