@@ -5,7 +5,6 @@ function appointments_admin_page_callback() {
     $results = $wpdb->get_results("SELECT * FROM {$table_name} ORDER BY `created_at` DESC");
 
     ?>
-    <pre><?php //print_r($results); ?></pre>
     <div class="wrap">
         <h1>All Appointments</h1>
 

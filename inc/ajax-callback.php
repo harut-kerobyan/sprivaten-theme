@@ -36,6 +36,13 @@ function sprivaten_appointment_form_ajax_callback() {
         die;
     }
 
+	$available_data = check_availability( $email, $department, $time );
+
+	if ( ! $available_data['available'] ) {
+		echo json_encode( [ 'status' => 'error', 'msg' => $available_data['msg'] ] );
+		die;
+	}
+
     insert_appointment_row($name, $email, $department, $time, $message);
 
 	$output = ['status' => 'ok'];

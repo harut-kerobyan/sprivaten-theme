@@ -78,3 +78,38 @@ function rate_stars_html($rate = 5) {
 
     echo $output . '</div>';
 }
+
+function check_availability( $email, $department, $time ) {
+	global $wpdb;
+	$table_name = $wpdb->prefix . 'appointment';
+	$output     = [ 'available' => true ];
+
+	// Prepare SQL queries
+	$user_email_sql = $wpdb->prepare(
+		"SELECT * FROM {$table_name} WHERE `email` = %s AND `time` = %s",
+		[ $email, $time ]
+	);
+	$user_dep_sql = $wpdb->prepare(
+		"SELECT * FROM {$table_name} WHERE `email` = %s AND `department` = %s",
+		[ $email, $department ]
+	);
+	$time_sql  = $wpdb->prepare(
+		"SELECT * FROM {$table_name} WHERE `department` = %s AND `time` = %s",
+		[ $department, $time ]
+	);
+
+	// SQL queries execution
+	$user_email_exist = $wpdb->get_row( $user_email_sql );
+	$user_dep_exist = $wpdb->get_row( $user_dep_sql );
+	$time_booked = $wpdb->get_row( $time_sql );
+
+	if ( $user_email_exist || $user_dep_exist ) {
+		$output['available'] = false;
+		$output['msg']       = 'You already booked an appointment.';
+	} elseif ( $time_booked ) {
+		$output['available'] = false;
+		$output['msg']       = 'That time is already booked.';
+	}
+
+	return $output;
+}

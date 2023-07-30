@@ -32,6 +32,9 @@ $bg_image = get_sub_field('background_image');
                                 <option value="4:00 Available">4:00 Available</option>
                                 <option value="5:00 Available">5:00 Available</option>
                                 <option value="6:00 Available">6:00 Available</option>
+                                <option value="7:00 Available">7:00 Available</option>
+                                <option value="8:00 Available">8:00 Available</option>
+                                <option value="9:00 Available">9:00 Available</option>
                             </select>
                         </div>
                     </div>
